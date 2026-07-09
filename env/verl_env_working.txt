@@ -158,3 +158,14 @@ websockets==16.0
 xgrammar==0.1.27
 yarl==1.24.2
 2811d4b9baf5059a360d0616027f6a55ca476e5a
+
+# --- flash_attn shim (required) ---
+# sm_120 has no FA2 prebuilt wheel; server has no nvcc (only ptxas via pip).
+# verl imports flash_attn.bert_padding (pure PyTorch, no CUDA kernels).
+# Vendor that single file:
+#   git clone --depth 1 -b v2.8.3 https://github.com/Dao-AILab/flash-attention /tmp/fa-src
+#   SP=.venv-verl/lib/python3.10/site-packages
+#   mkdir -p $SP/flash_attn
+#   cp /tmp/fa-src/flash_attn/bert_padding.py $SP/flash_attn/
+#   echo '__version__ = "2.8.3.shim"' > $SP/flash_attn/__init__.py
+# Requires: attn_implementation=sdpa, use_remove_padding=False
