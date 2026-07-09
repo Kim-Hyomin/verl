@@ -133,3 +133,11 @@ outputs
 .history.venv-verl/
 logs/
 ckpts/
+
+# --- hyomin: local artifacts ---
+.venv-verl/
+data/
+logs/
+ckpts/
+outputs/
+wandb/
