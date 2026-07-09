@@ -130,4 +130,6 @@ ENV/
 logs
 log
 outputs
-.history
+.history.venv-verl/
+logs/
+ckpts/
