@@ -145,3 +145,7 @@ wandb/
 # --- analysis outputs ---
 *_token_lengths.csv
 longest_*_prompt.txt
+
+# analysis outputs
+*_token_lengths.csv
+longest_*_prompt.txt
